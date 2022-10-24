@@ -1,19 +1,27 @@
-# Python3 code to demonstrate working of
-# All pair combinations of 2 tuples
-# Using list comprehension
-# initializing tuples
-test_tuple1 = (4, 5)
-test_tuple2 = (7, 8)
-# printing original tuples
-print("The original tuple 1 : " + str(test_tuple1))
-print("The updated tuple 2 : " + str(test_tuple2))
-# All pair s of 2 tuples
-asdfasdfas
-asdfasdfasasdfasdf
-dfsas
-dfsasdf
-# Using list comprehension
-res = [(a, b) for a in test_tuple1 for b in test_tuple2]
-res = res + [(a, b) for a in test_tuple2 for b in test_tuple1]
-# printing result
-print("The filtered tuple : " + str(res))
+# Importing flask module in the project is mandatory
+# An object of Flask class is our WSGI application.
+from flask import Flask
+
+# Flask constructor takes the name of
+# current module (__name__) as argument.
+app = Flask(__name__)
+
+# The route() function of the Flask class is a decorator,
+# which tells the application which URL should call
+# the associated function.
+@app.route('/')
+# ‘/’ URL is bound with hello_world() function.
+def hello_world():
+	return 'Hello World!'
+
+@app.route('/add/<var1>/<var2>')
+def add(var1, var2):
+    return 'Sum is: ' + str(int(var1) + int(var2))
+
+# main driver function
+if __name__ == '__main__':
+
+	# run() method of Flask class runs the application
+	# on the local development server.
+	app.run(port=8080)
+ 
